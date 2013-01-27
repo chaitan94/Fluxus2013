@@ -28,7 +28,6 @@ import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
 public class Main extends Activity {
-
 	TabHost th;
 	LinearLayout llEvents;
 	LinearLayout llFluxus;
@@ -97,7 +96,6 @@ public class Main extends Activity {
 
 		th = (TabHost) findViewById(R.id.tabhost);
 		th.setup();
-		
 		OnTouchListener tabSwipe = new OnTouchListener() {
 
 			@Override
@@ -140,8 +138,7 @@ public class Main extends Activity {
 		specs.setIndicator("Events");
 		th.addTab(specs);
 		tvFluxus1.setText("IIT Indore's Techno-Cultural Fest");
-		tvFluxus2
-				.setText("An exceptional confluence of exquisite cultural displays with state-of-the-art technological innovations reverberating in an aura filled with excitement, amusement and splendour. Discover your indigenous creativity, set yourself astray from the usual monotonous life and delve into the trenches of exhilaration and entertainment.");
+		tvFluxus2.setText(getResources().getString(R.string.summary));
 		tvFluxus3.setText("Overall Coordinators");
 		tvFluxus4.setText("Arpit Jain ( +919826084568 )");
 		tvFluxus5.setText("Jwalant Shah ( +918871749707 )");
@@ -279,7 +276,7 @@ public class Main extends Activity {
 				R.anim.listinrev);
 		if (level == 1) {
 			switch (typeOfEvent) {
-			case 0:
+			case 0 :
 				lvProEvents.startAnimation(listoutrev);
 				llEvents.removeView(lvProEvents);
 				break;

@@ -4,7 +4,7 @@
     <string name="app_name">Fluxus 2013</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-
+    <string name="summary">An exceptional confluence of exquisite cultural displays with state-of-the-art technological innovations reverberating in an aura filled with excitement, amusement and splendour. Discover your indigenous creativity, set yourself astray from the usual monotonous life and delve into the trenches of exhilaration and entertainment.</string>
     <array id="eventTypesIdArr" name="eventTypesIdArr">
         <item>@array/proEvents</item>
         <item>@array/cultEvents</item>

@@ -1,7 +1,5 @@
 package com.IITI.fluxus13;
 
-import org.apache.http.impl.conn.tsccm.WaitingThread;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
