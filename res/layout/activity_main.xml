@@ -1,0 +1,215 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main" >
+
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/llEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ListView
+                        android:id="@+id/lvEventTypes"
+                        style="@android:style/Theme.Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/eventTypes" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvProEvents"
+                        style="@android:style/Theme.Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/proEvents" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvCultEvents"
+                        style="@android:style/Theme.Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/cultEvents" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvTechEvents"
+                        style="@android:style/Theme.Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/techEvents" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvInformalEvents"
+                        style="@android:style/Theme.Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/informalEvents" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvMaraEvents"
+                        style="@android:style/Theme.Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/maraEvents" >
+                    </ListView>
+                </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/svFluxus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:id="@+id/llFluxus"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+
+                        <ImageView
+                            android:id="@+id/ivFluxus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/f13m"
+                            android:padding="20px" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#196AFF" 
+                            android:textSize="30sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:fontFamily=""
+                            android:paddingBottom="20dp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus2h"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Note: Click a number to call"
+                            android:textSize="16sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#196AFF"
+                            android:textSize="30sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#196AFF"
+                            android:textSize="30sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#196AFF"
+                            android:textSize="30sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#196AFF"
+                            android:textSize="30sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#196AFF"
+                            android:textSize="30sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp" />
+                    </LinearLayout>
+                </ScrollView>
+
+                <LinearLayout
+                    android:id="@+id/tab3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fluxus 2013</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+
+    <array id="eventTypesIdArr" name="eventTypesIdArr">
+        <item>@array/proEvents</item>
+        <item>@array/cultEvents</item>
+        <item>@array/techEvents</item>
+        <item>@array/informalEvents</item>
+        <item>@array/maraEvents</item>
+    </array>
+    <string-array id="proEvents" name="proEvents">
+        <item>Stand-up Comedy</item>
+        <item>Bands..Bang! Bang!! Boom!!!</item>
+        <item>Dance Performance</item>
+    </string-array>
+    <string-array id="cultEvents" name="cultEvents">
+        <item>Model United Nations</item>
+        <item>Virtual Stock Market	</item>
+        <item>Drama</item>
+        <item>Stunt Mania</item>
+        <item>Dance</item>
+        <item>Quizooka</item>
+    </string-array>
+    <string-array id="techEvents" name="techEvents">
+        <item>Civil Design</item>
+        <item>Electronics Design</item>
+        <item>Programming Contest</item>
+        <item>Jump Out</item>
+        <item>Aeromodeling</item>
+        <item>Robo 1</item>
+        <item>Robo Aquatics</item>
+        <item>M-Armada</item>
+        <item>Robo Sumo</item>
+        <item>Robo Golf</item>
+        <item>Duel Lan</item>
+    </string-array>
+    <string-array id="informalEvents" name="informalEvents">
+        <item>Crazzy Clicks</item>
+        <item>Fight with Kites</item>
+        <item>Spoof of JEE</item>
+        <item>RanSense</item>
+        <item>Cache of the Lexis</item>
+        <item>Spell Bee</item>
+    </string-array>
+    <string-array id="maraEvents" name="maraEvents">
+        <item>Respect For Women</item>
+    </string-array>
+    <string-array id="eventTypes" name="eventTypes">
+        <item>Pro-Shows</item>
+        <item>Culturals</item>
+        <item>Technicals</item>
+        <item>Informals</item>
+        <item>Marathon</item>
+    </string-array>
+    <string-array id="fluxusStr" name="fluxusStr">
+        <item> IIT Indore\'s Techno-Cultural Fest </item>
+        <item> An exceptional confluence of exquisite cultural displays with state-of-the-art technological innovations reverberating in an aura filled with excitement, amusement and splendour. Discover your indigenous creativity, set yourself astray from the usual monotonous life and delve into the trenches of exhilaration and entertainment. </item>
+        <item> Overall Coordinators </item>
+        <item> Arpit Jain ( +919826084568 ) </item>
+        <item> Jwalant Shah ( +918871749707 ) </item>
+        <item> Marketing Head </item>
+        <item> Apoorv Goyal ( +918962447275 ) </item>
+        <item> Design Head </item>
+        <item> Gagan Jakhotiya ( +919074888822 ) </item>
+        <item> Financing Head </item>
+        <item> Rahul Pawar ( +917566569192 ) </item>
+        <item> Cultural Head </item>
+        <item> Sachin Londhe ( +919179623390 ) </item>
+    </string-array>
+
+</resources>
