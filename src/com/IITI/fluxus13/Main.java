@@ -41,7 +41,9 @@ public class Main extends SherlockFragmentActivity {
                         FragmentFluxus.class, null);
         mTabsAdapter.addTab(actionBar.newTab().setText("Events"),
                         FragmentEvents.class, null);
-
+        mTabsAdapter.addTab(
+                actionBar.newTab().setText("Contact"),
+                FragmentContact.class, null);
 		
 
 	}
