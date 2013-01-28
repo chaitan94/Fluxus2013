@@ -1,14 +1,11 @@
 package com.IITI.fluxus13;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,7 +24,14 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
-public class Main extends Activity {
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
+public class Main extends SherlockActivity {
+	ActionBar actionBar;
 	TabHost th;
 	LinearLayout llEvents;
 	LinearLayout llFluxus;
@@ -67,7 +71,7 @@ public class Main extends Activity {
 
 		Typeface font = Typeface.createFromAsset(getAssets(),
 				"Gotham Nights.ttf");
-
+        actionBar=getSupportActionBar();
 		llEvents = (LinearLayout) findViewById(R.id.llEvents);
 		llFluxus = (LinearLayout) findViewById(R.id.llFluxus);
 		svFluxus = (ScrollView) findViewById(R.id.svFluxus);
@@ -320,8 +324,9 @@ public class Main extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
+		MenuInflater inflater=getSupportMenuInflater();
+				inflater.inflate(R.menu.activity_main, menu);
+				return true;
 	}
 
 	@Override
