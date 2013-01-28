@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentEvents" 
+    android:background="@drawable/bg">
+
+    <LinearLayout
+                    android:id="@+id/llEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ListView
+                        android:id="@+id/lvEventTypes"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/eventTypes" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvProEvents"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/proEvents" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvCultEvents"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/cultEvents" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvTechEvents"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/techEvents" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvInformalEvents"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/informalEvents" >
+                    </ListView>
+
+                    <ListView
+                        android:id="@+id/lvMaraEvents"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:entries="@array/maraEvents" >
+                    </ListView>
+</LinearLayout>               
+
+</RelativeLayout>

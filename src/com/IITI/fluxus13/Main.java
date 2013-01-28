@@ -1,272 +1,144 @@
 package com.IITI.fluxus13;
 
+import java.util.ArrayList;
+
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
-import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.ScrollView;
-import android.widget.TabHost;
-import android.widget.TabHost.TabSpec;
-import android.widget.TextView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 
 import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.ActionBar.Tab;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
-public class Main extends SherlockActivity {
+public class Main extends SherlockFragmentActivity {
 	ActionBar actionBar;
-	TabHost th;
-	LinearLayout llEvents;
-	LinearLayout llFluxus;
-	ScrollView svFluxus;
-	ImageView ivFluxus;
-	ListView lvTechEvents;
-	ListView lvCultEvents;
-	ListView lvMaraEvents;
-	ListView lvProEvents;
-	ListView lvInformalEvents;
-	ListView lvEventTypes;
-	TextView tvFluxus1;
-	TextView tvFluxus2;
-	TextView tvFluxus3;
-	TextView tvFluxus4;
-	TextView tvFluxus5;
-	TextView tvFluxus6;
-	TextView tvFluxus7;
-	TextView tvFluxus8;
-	TextView tvFluxus9;
-	TextView tvFluxus10;
-	TextView tvFluxus11;
-	TextView tvFluxus12;
-	TextView tvFluxus13;
-	int level = 0;
-	int typeOfEvent = -1;
-	String[] pro;
-
-	// list anim
-	int listP = 0;
-
-	// swipe
-	float a, b;
-	int k = 0;
-
-	protected void setupVars() {
-
-		Typeface font = Typeface.createFromAsset(getAssets(),
-				"Gotham Nights.ttf");
-        actionBar=getSupportActionBar();
-		llEvents = (LinearLayout) findViewById(R.id.llEvents);
-		llFluxus = (LinearLayout) findViewById(R.id.llFluxus);
-		svFluxus = (ScrollView) findViewById(R.id.svFluxus);
-		ivFluxus = (ImageView) findViewById(R.id.ivFluxus);
-		lvProEvents = (ListView) findViewById(R.id.lvProEvents);
-		lvCultEvents = (ListView) findViewById(R.id.lvCultEvents);
-		lvTechEvents = (ListView) findViewById(R.id.lvTechEvents);
-		lvMaraEvents = (ListView) findViewById(R.id.lvMaraEvents);
-		lvInformalEvents = (ListView) findViewById(R.id.lvInformalEvents);
-		lvEventTypes = (ListView) findViewById(R.id.lvEventTypes);
-		pro = getResources().getStringArray(R.array.proEvents);
-
-		tvFluxus1 = (TextView) findViewById(R.id.tvFluxus1);
-		tvFluxus2 = (TextView) findViewById(R.id.tvFluxus2);
-		tvFluxus3 = (TextView) findViewById(R.id.tvFluxus3);
-		tvFluxus4 = (TextView) findViewById(R.id.tvFluxus4);
-		tvFluxus5 = (TextView) findViewById(R.id.tvFluxus5);
-		tvFluxus6 = (TextView) findViewById(R.id.tvFluxus6);
-		tvFluxus7 = (TextView) findViewById(R.id.tvFluxus7);
-		tvFluxus8 = (TextView) findViewById(R.id.tvFluxus8);
-		tvFluxus9 = (TextView) findViewById(R.id.tvFluxus9);
-		tvFluxus10 = (TextView) findViewById(R.id.tvFluxus10);
-		tvFluxus11 = (TextView) findViewById(R.id.tvFluxus11);
-		tvFluxus12 = (TextView) findViewById(R.id.tvFluxus12);
-		tvFluxus13 = (TextView) findViewById(R.id.tvFluxus13);
-
-		th = (TabHost) findViewById(R.id.tabhost);
-		th.setup();
-		OnTouchListener tabSwipe = new OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				// TODO Auto-generated method stub
-				k = th.getCurrentTab();
-				switch (event.getAction()) {
-				case MotionEvent.ACTION_DOWN:
-					a = event.getX();
-					break;
-				case MotionEvent.ACTION_UP:
-					b = event.getX();
-					if (a-b > 20) {
-						th.setCurrentTab(++k);
-					}
-					else if (b-a > 20) {
-						th.setCurrentTab(--k);
-					}
-					break;
-				}
-				return true;
-			}
-		};
-
-		llEvents.setFilterTouchesWhenObscured(false);
-		llEvents.setOnTouchListener(tabSwipe);
-		llFluxus.setFilterTouchesWhenObscured(false);
-		llFluxus.setOnTouchListener(tabSwipe);
-
-		llEvents.removeAllViews();
-		llEvents.addView(lvEventTypes);
-
-		TabSpec specs = th.newTabSpec("tag1");
-		specs = th.newTabSpec("tag2");
-		specs.setContent(R.id.svFluxus);
-		specs.setIndicator("Fluxus");
-		th.addTab(specs);
-		specs = th.newTabSpec("tag1");
-		specs.setContent(R.id.llEvents);
-		specs.setIndicator("Events");
-		th.addTab(specs);
-		tvFluxus1.setText("IIT Indore's Techno-Cultural Fest");
-		tvFluxus2.setText(getResources().getString(R.string.summary));
-		tvFluxus3.setText("Overall Coordinators");
-		tvFluxus4.setText("Arpit Jain ( +919826084568 )");
-		tvFluxus5.setText("Jwalant Shah ( +918871749707 )");
-		tvFluxus6.setText("Marketing Head");
-		tvFluxus7.setText("Apoorv Goyal ( +918962447275 )");
-		tvFluxus8.setText("Design Head");
-		tvFluxus9.setText("Gagan Jakhotiya ( +919074888822 )");
-		tvFluxus10.setText("Financing Head");
-		tvFluxus11.setText("Rahul Pawar ( +917566569192 )");
-		tvFluxus12.setText("Cultural Head");
-		tvFluxus13.setText("Sachin Londhe ( +919179623390 )");
-		tvFluxus4.setOnClickListener(call);
-		tvFluxus5.setOnClickListener(call);
-		tvFluxus7.setOnClickListener(call);
-		tvFluxus9.setOnClickListener(call);
-		tvFluxus11.setOnClickListener(call);
-		tvFluxus13.setOnClickListener(call);
-		ivFluxus.setOnClickListener(new OnClickListener() {
-
-			public void onClick(View v) {
-				Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri
-						.parse("http://www.fluxus.in"));
-				startActivity(browserIntent);
-			}
-		});
-
-	}
-
-	OnClickListener call = new OnClickListener() {
-
-		public void onClick(View v) {
-
-			String number = ((TextView) v).getText().toString();
-			number = number.substring(number.indexOf("+91"),
-					number.indexOf("+91") + 13);
-			Intent intent = new Intent(Intent.ACTION_DIAL);
-			intent.setData(Uri.parse("tel:" + number));
-			startActivity(intent);
-
-		}
-	};
-
-	OnItemClickListener listClick = new OnItemClickListener() {
-		@SuppressWarnings("unchecked")
-		@Override
-		public void onItemClick(AdapterView<?> arg0, View arg1, int position,
-				long arg3) {
-			Bundle basket = new Bundle();
-			String blah = ((AdapterView<ListAdapter>) arg1.getParent())
-					.getItemAtPosition(position).toString();
-			basket.putString("naam", blah);
-			basket.putInt("typeEvent", typeOfEvent);
-			basket.putInt("key", position);
-			try {
-				Class ourClass = Class.forName("com.IITI.fluxus13.EventDialog");
-				Intent ourIntent = new Intent(Main.this, ourClass);
-				ourIntent.putExtras(basket);
-				startActivity(ourIntent);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			}
-		}
-	};
+	 ViewPager mViewPager;
+     TabsAdapter mTabsAdapter;
+	
+		
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_main);
-		setupVars();
-		lvProEvents.setOnItemClickListener(listClick);
-		lvCultEvents.setOnItemClickListener(listClick);
-		lvTechEvents.setOnItemClickListener(listClick);
-		lvInformalEvents.setOnItemClickListener(listClick);
-		lvMaraEvents.setOnItemClickListener(listClick);
-		lvEventTypes.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1,
-					int position, long arg3) {
-				level = 1;
-				llEvents.removeAllViews();
-				typeOfEvent = position;
-				switch (position) {
-				case 0:
-					llEvents.addView(lvProEvents);
-					break;
-				case 1:
-					llEvents.addView(lvCultEvents);
-					break;
-				case 2:
-					llEvents.addView(lvTechEvents);
-					break;
-				case 3:
-					llEvents.addView(lvInformalEvents);
-					break;
-				case 4:
-					llEvents.addView(lvMaraEvents);
-					break;
-				}
-			}
-		});
+		mViewPager = new ViewPager(this);
+        mViewPager.setId(R.id.pager);
+        setContentView(mViewPager);
+        actionBar=getSupportActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        mTabsAdapter = new TabsAdapter(this, mViewPager);
+
+        mTabsAdapter.addTab(
+                        actionBar.newTab().setText("Fluxus"),
+                        FragmentFluxus.class, null);
+        mTabsAdapter.addTab(actionBar.newTab().setText("Events"),
+                        FragmentEvents.class, null);
+
+		
 
 	}
+	public static class TabsAdapter extends FragmentPagerAdapter implements
+    ActionBar.TabListener, ViewPager.OnPageChangeListener
+{
+private final Context mContext;
+private final ActionBar mActionBar;
+private final ViewPager mViewPager;
+private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
 
+static final class TabInfo
+{
+    private final Class<?> clss;
+    private final Bundle args;
+
+    TabInfo(Class<?> _class, Bundle _args)
+    {
+            clss = _class;
+            args = _args;
+    }
+}
+
+public TabsAdapter(SherlockFragmentActivity activity, ViewPager pager)
+{
+    super(activity.getSupportFragmentManager());
+    mContext = activity;
+    mActionBar = activity.getSupportActionBar();
+    mViewPager = pager;
+    mViewPager.setAdapter(this);
+    mViewPager.setOnPageChangeListener(this);
+}
+
+public void addTab(ActionBar.Tab tab, Class<?> clss, Bundle args)
+{
+    TabInfo info = new TabInfo(clss, args);
+    tab.setTag(info);
+    tab.setTabListener(this);
+    mTabs.add(info);
+    mActionBar.addTab(tab);
+    notifyDataSetChanged();
+}
+
+@Override
+public int getCount()
+{
+    return mTabs.size();
+}
+
+@Override
+public Fragment getItem(int position)
+{
+    TabInfo info = mTabs.get(position);
+    return Fragment.instantiate(mContext, info.clss.getName(),
+                    info.args);
+}
+
+public void onPageScrolled(int position, float positionOffset,
+            int positionOffsetPixels)
+{
+}
+
+public void onPageSelected(int position)
+{
+    mActionBar.setSelectedNavigationItem(position);
+}
+
+public void onPageScrollStateChanged(int state)
+{
+}
+
+public void onTabSelected(Tab tab, FragmentTransaction ft)
+{
+    Object tag = tab.getTag();
+    for (int i = 0; i < mTabs.size(); i++)
+    {
+            if (mTabs.get(i) == tag)
+            {
+                    mViewPager.setCurrentItem(i);
+            }
+    }
+}
+
+public void onTabUnselected(Tab tab, FragmentTransaction ft)
+{
+}
+
+public void onTabReselected(Tab tab, FragmentTransaction ft)
+{
+}
+}
 	@Override
 	public void onBackPressed() {
-		if (level == 1) {
-			switch (typeOfEvent) {
-			case 0 :
-				llEvents.removeView(lvProEvents);
-				break;
-			case 1:
-				llEvents.removeView(lvCultEvents);
-				break;
-			case 2:
-				llEvents.removeView(lvTechEvents);
-				break;
-			case 3:
-				llEvents.removeView(lvInformalEvents);
-				break;
-			case 4:
-				llEvents.removeView(lvMaraEvents);
-				break;
-			}
-			llEvents.addView(lvEventTypes);
-			level = 0;
+		if (FragmentEvents.level == 1) {
+			FragmentEvents.llEvents.removeAllViews();
+			FragmentEvents.llEvents.addView(FragmentEvents.lvEventTypes);
+			FragmentEvents.level = 0;
 		} else {
 			new AlertDialog.Builder(this)
 					.setIcon(android.R.drawable.ic_dialog_alert)
