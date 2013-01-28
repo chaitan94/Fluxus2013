@@ -9,12 +9,7 @@ package com.IITI.fluxus13;
 
 public final class R {
     public static final class anim {
-        public static final int fade_in=0x7f040000;
-        public static final int fluxscale=0x7f040001;
-        public static final int listin=0x7f040002;
-        public static final int listinrev=0x7f040003;
-        public static final int listout=0x7f040004;
-        public static final int listoutrev=0x7f040005;
+        public static final int fluxscale=0x7f040000;
     }
     public static final class array {
         public static final int cultEvents=0x7f0c0002;

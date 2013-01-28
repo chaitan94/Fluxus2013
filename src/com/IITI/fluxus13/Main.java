@@ -11,8 +11,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.Window;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
@@ -26,8 +24,8 @@ import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
 public class Main extends SherlockActivity {
@@ -212,26 +210,7 @@ public class Main extends SherlockActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
-		final Animation fade = AnimationUtils.loadAnimation(this,
-				R.anim.fade_in);
-		final Animation listout = AnimationUtils.loadAnimation(this,
-				R.anim.listout);
-		final Animation listin = AnimationUtils.loadAnimation(this,
-				R.anim.listin);
 		setupVars();
-		tvFluxus1.startAnimation(fade);
-		tvFluxus2.startAnimation(fade);
-		tvFluxus3.startAnimation(fade);
-		tvFluxus4.startAnimation(fade);
-		tvFluxus5.startAnimation(fade);
-		tvFluxus6.startAnimation(fade);
-		tvFluxus7.startAnimation(fade);
-		tvFluxus8.startAnimation(fade);
-		tvFluxus9.startAnimation(fade);
-		tvFluxus10.startAnimation(fade);
-		tvFluxus11.startAnimation(fade);
-		tvFluxus12.startAnimation(fade);
-		tvFluxus13.startAnimation(fade);
 		lvProEvents.setOnItemClickListener(listClick);
 		lvCultEvents.setOnItemClickListener(listClick);
 		lvTechEvents.setOnItemClickListener(listClick);
@@ -242,28 +221,22 @@ public class Main extends SherlockActivity {
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					int position, long arg3) {
 				level = 1;
-				lvEventTypes.startAnimation(listout);
 				llEvents.removeAllViews();
 				typeOfEvent = position;
 				switch (position) {
 				case 0:
-					lvProEvents.startAnimation(listin);
 					llEvents.addView(lvProEvents);
 					break;
 				case 1:
-					lvCultEvents.startAnimation(listin);
 					llEvents.addView(lvCultEvents);
 					break;
 				case 2:
-					lvTechEvents.startAnimation(listin);
 					llEvents.addView(lvTechEvents);
 					break;
 				case 3:
-					lvInformalEvents.startAnimation(listin);
 					llEvents.addView(lvInformalEvents);
 					break;
 				case 4:
-					lvMaraEvents.startAnimation(listin);
 					llEvents.addView(lvMaraEvents);
 					break;
 				}
@@ -274,34 +247,24 @@ public class Main extends SherlockActivity {
 
 	@Override
 	public void onBackPressed() {
-		final Animation listoutrev = AnimationUtils.loadAnimation(this,
-				R.anim.listoutrev);
-		final Animation listinrev = AnimationUtils.loadAnimation(this,
-				R.anim.listinrev);
 		if (level == 1) {
 			switch (typeOfEvent) {
 			case 0 :
-				lvProEvents.startAnimation(listoutrev);
 				llEvents.removeView(lvProEvents);
 				break;
 			case 1:
-				lvCultEvents.startAnimation(listoutrev);
 				llEvents.removeView(lvCultEvents);
 				break;
 			case 2:
-				lvTechEvents.startAnimation(listoutrev);
 				llEvents.removeView(lvTechEvents);
 				break;
 			case 3:
-				lvInformalEvents.startAnimation(listoutrev);
 				llEvents.removeView(lvInformalEvents);
 				break;
 			case 4:
-				lvMaraEvents.startAnimation(listoutrev);
 				llEvents.removeView(lvMaraEvents);
 				break;
 			}
-			lvEventTypes.startAnimation(listinrev);
 			llEvents.addView(lvEventTypes);
 			level = 0;
 		} else {
