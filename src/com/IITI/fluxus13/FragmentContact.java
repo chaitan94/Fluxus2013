@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
@@ -29,6 +31,19 @@ public class FragmentContact extends SherlockFragment {
 {
       View view = inflater.inflate(R.layout.fragment_contact, container, false);
       setupVars(view);
+      final Animation fade = AnimationUtils.loadAnimation(view.getContext(),
+				R.anim.fade_in);
+      tvFluxus3.startAnimation(fade);
+		tvFluxus4.startAnimation(fade);
+		tvFluxus5.startAnimation(fade);
+		tvFluxus6.startAnimation(fade);
+		tvFluxus7.startAnimation(fade);
+		tvFluxus8.startAnimation(fade);
+		tvFluxus9.startAnimation(fade);
+		tvFluxus10.startAnimation(fade);
+		tvFluxus11.startAnimation(fade);
+		tvFluxus12.startAnimation(fade);
+		tvFluxus13.startAnimation(fade);
       return view;}
 	  
 	  protected void setupVars(View view){

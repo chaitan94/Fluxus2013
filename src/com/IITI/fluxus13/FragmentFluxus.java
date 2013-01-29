@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,7 +24,12 @@ public class FragmentFluxus extends SherlockFragment {
                     Bundle savedInstanceState)
     {
             View view = inflater.inflate(R.layout.fragment_fluxus, container, false);
+            final Animation fade = AnimationUtils.loadAnimation(view.getContext(),
+    				R.anim.fade_in);
             setupVars(view);
+            tvFluxus1.startAnimation(fade);
+    		tvFluxus2.startAnimation(fade);
+    		
             return view;
     }
 	protected void setupVars(View view){
