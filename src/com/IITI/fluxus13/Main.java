@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
+import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
@@ -137,39 +138,15 @@ public void onTabReselected(Tab tab, FragmentTransaction ft)
 {
 }
 }
-	//TODO:Switch to FragmentEvents
+	
 	@Override
 	public void onBackPressed() {
-			final Animation listoutrev = AnimationUtils.loadAnimation(this,
-					R.anim.listoutrev);
-			final Animation listinrev = AnimationUtils.loadAnimation(this,
-					R.anim.listinrev);
+		
 			if (FragmentEvents.level == 1) {
-				switch (FragmentEvents.typeOfEvent) {
-				case 0:
-					FragmentEvents.lvProEvents.startAnimation(listoutrev);
-					FragmentEvents.llEvents.removeView(FragmentEvents.lvProEvents);
-					break;
-				case 1:
-					FragmentEvents.lvCultEvents.startAnimation(listoutrev);
-					FragmentEvents.llEvents.removeView(FragmentEvents.lvCultEvents);
-					break;
-				case 2:
-					FragmentEvents.lvTechEvents.startAnimation(listoutrev);
-					FragmentEvents.llEvents.removeView(FragmentEvents.lvTechEvents);
-					break;
-				case 3:
-					FragmentEvents.lvInformalEvents.startAnimation(listoutrev);
-					FragmentEvents.llEvents.removeView(FragmentEvents.lvInformalEvents);
-					break;
-				case 4:
-					FragmentEvents.lvMaraEvents.startAnimation(listoutrev);
-					FragmentEvents.llEvents.removeView(FragmentEvents.lvMaraEvents);
-					break;
-				}
-				FragmentEvents.lvEventTypes.startAnimation(listinrev);
+				FragmentEvents.llEvents.removeAllViews();
 				FragmentEvents.llEvents.addView(FragmentEvents.lvEventTypes);
 				FragmentEvents.level = 0;
+			
 		} else {
 			new AlertDialog.Builder(this)
 					.setIcon(android.R.drawable.ic_dialog_alert)

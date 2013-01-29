@@ -1,5 +1,6 @@
 package com.IITI.fluxus13;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,27 +17,25 @@ import android.widget.ListView;
 import com.actionbarsherlock.app.SherlockFragment;
 
 public class FragmentEvents extends SherlockFragment {
-static LinearLayout llEvents;
-	
-	static ListView lvTechEvents;
-	static ListView lvCultEvents;
-	static ListView lvMaraEvents;
-	static ListView lvProEvents;
-	static ListView lvInformalEvents;
-	static ListView lvEventTypes;
-	
-	static int level = 0;
-	static int typeOfEvent = -1;
+     static LinearLayout llEvents;
+ 	 ListView lvTechEvents;
+	 ListView lvCultEvents;
+	 ListView lvMaraEvents;
+	 ListView lvProEvents;
+	 ListView lvInformalEvents;
+	 static ListView lvEventTypes;
+	 static int level = 0;
+	 int typeOfEvent = -1;
 
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                     Bundle savedInstanceState)
     {
             View view = inflater.inflate(R.layout.fragment_events, container, false);
-    		final Animation listout = AnimationUtils.loadAnimation(view.getContext(),
+    		/*final Animation listout = AnimationUtils.loadAnimation(view.getContext(),
     				R.anim.listout);
     		final Animation listin = AnimationUtils.loadAnimation(view.getContext(),
-    				R.anim.listin);
+    				R.anim.listin);*/
             setupVars(view);
            lvProEvents.setOnItemClickListener(listClick);
     		lvCultEvents.setOnItemClickListener(listClick);
@@ -48,28 +47,28 @@ static LinearLayout llEvents;
     			public void onItemClick(AdapterView<?> arg0, View arg1,
     					int position, long arg3) {
     				level = 1;
-    				lvEventTypes.startAnimation(listout);
+    				//lvEventTypes.startAnimation(listout);
     				llEvents.removeAllViews();
     				typeOfEvent = position;
     				switch (position) {
     				case 0:
-    					lvProEvents.startAnimation(listin);
+    					//lvProEvents.startAnimation(listin);
     					llEvents.addView(lvProEvents);
     					break;
     				case 1:
-    					lvCultEvents.startAnimation(listin);
+    					//lvCultEvents.startAnimation(listin);
     					llEvents.addView(lvCultEvents);
     					break;
     				case 2:
-    					lvCultEvents.startAnimation(listin);
+    					//lvCultEvents.startAnimation(listin);
     					llEvents.addView(lvTechEvents);
     					break;
     				case 3:
-    					lvInformalEvents.startAnimation(listin);
+    					//lvInformalEvents.startAnimation(listin);
     					llEvents.addView(lvInformalEvents);
     					break;
     				case 4:
-    					lvMaraEvents.startAnimation(listin);
+    					//lvMaraEvents.startAnimation(listin);
     					llEvents.addView(lvMaraEvents);
     					break;
     				}
@@ -114,5 +113,5 @@ llEvents = (LinearLayout) view.findViewById(R.id.llEvents);
 			}
 		}
 	};
-	
+
 }
