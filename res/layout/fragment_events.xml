@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     tools:context=".FragmentEvents" 
     android:background="@drawable/bg">
+    
 
     <LinearLayout
                     android:id="@+id/llEvents"
@@ -12,6 +13,7 @@
 
                     <ListView
                         android:id="@+id/lvEventTypes"
+                        android:cacheColorHint="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -20,6 +22,7 @@
 
                     <ListView
                         android:id="@+id/lvProEvents"
+                        android:cacheColorHint="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -28,6 +31,7 @@
 
                     <ListView
                         android:id="@+id/lvCultEvents"
+                          android:cacheColorHint="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -35,7 +39,9 @@
                     </ListView>
 
                     <ListView
+                       
                         android:id="@+id/lvTechEvents"
+                         android:cacheColorHint="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -43,7 +49,9 @@
                     </ListView>
 
                     <ListView
+                       
                         android:id="@+id/lvInformalEvents"
+                         android:cacheColorHint="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -52,6 +60,7 @@
 
                     <ListView
                         android:id="@+id/lvMaraEvents"
+                         android:cacheColorHint="@android:color/transparent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
