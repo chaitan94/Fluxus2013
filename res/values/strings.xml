@@ -4,6 +4,7 @@
     <string name="app_name">Fluxus 2013</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="summary">An exceptional confluence of exquisite cultural displays with state-of-the-art technological innovations reverberating in an aura filled with excitement, amusement and splendour. Discover your indigenous creativity, set yourself astray from the usual monotonous life and delve into the trenches of exhilaration and entertainment.</string>
 
     <array id="eventTypesIdArr" name="eventTypesIdArr">
         <item>@array/proEvents</item>
@@ -12,6 +13,7 @@
         <item>@array/informalEvents</item>
         <item>@array/maraEvents</item>
     </array>
+
     <string-array id="proEvents" name="proEvents">
         <item>Stand-up Comedy</item>
         <item>Bands..Bang! Bang!! Boom!!!</item>
@@ -71,5 +73,7 @@
         <item> Cultural Head </item>
         <item> Sachin Londhe ( +919179623390 ) </item>
     </string-array>
+
+
 
 </resources>

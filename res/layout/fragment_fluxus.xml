@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentFluxus"
+    android:background="@drawable/bg" >
+
+                <ScrollView
+                    android:id="@+id/svFluxus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:id="@+id/llFluxus"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="10dp" >
+
+                        <ImageView
+                            android:id="@+id/ivFluxus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/f13m"
+                            android:padding="20px" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#196AFF" 
+                            android:textSize="30sp" />
+
+                        <com.IITI.fluxus13.MyTextView
+                            android:id="@+id/tvFluxus2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="22sp"
+                            android:paddingBottom="20dp" />
+
+                    </LinearLayout>
+                </ScrollView>
+</RelativeLayout>
