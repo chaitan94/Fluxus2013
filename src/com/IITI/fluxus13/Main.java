@@ -16,7 +16,6 @@ import android.view.animation.AnimationUtils;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
@@ -27,12 +26,12 @@ public class Main extends SherlockFragmentActivity {
 	 ViewPager mViewPager;
      TabsAdapter mTabsAdapter;
 	
-		
+		FragmentEvents fe;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		mViewPager = new ViewPager(this);
+		mViewPager = new ViewPager(this); 
         mViewPager.setId(R.id.pager);
         setContentView(mViewPager);
         actionBar=getSupportActionBar();
@@ -138,31 +137,33 @@ public void onTabReselected(Tab tab, FragmentTransaction ft)
 {
 }
 }
-	
-	@Override
-	public void onBackPressed() {
-		
-			if (FragmentEvents.level == 1) {
-				FragmentEvents.llEvents.removeAllViews();
-				FragmentEvents.llEvents.addView(FragmentEvents.lvEventTypes);
-				FragmentEvents.level = 0;
-			
-		} else {
-			new AlertDialog.Builder(this)
-					.setIcon(android.R.drawable.ic_dialog_alert)
-					.setMessage("Do you want to exit?")
-					.setPositiveButton("Yes",
-							new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									finish();
-								}
+@Override	
+public void onBackPressed(){
+	 
+	final Animation listoutrev = AnimationUtils.loadAnimation(this,
+			R.anim.listoutrev);
+	final Animation listinrev = AnimationUtils.loadAnimation(this,
+			R.anim.listinrev);
+	if (FragmentEvents.level == 1) {
+	FragmentEvents.onBack(listoutrev, listinrev);
+	} else {
+		new AlertDialog.Builder(this)
+				.setIcon(android.R.drawable.ic_dialog_alert)
+				.setMessage("Do you want to exit?")
+				.setPositiveButton("Yes",
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								finish();
+							}
 
-							}).setNegativeButton("No", null).show();
-		}
-		return;
+						}).setNegativeButton("No", null).show();
 	}
+	return;
+
+	}
+			
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
