@@ -69,25 +69,8 @@ public class FragmentContact extends SherlockFragment {
 			tvFluxus11.setText("Rahul Pawar ( +917566569192 )");
 			tvFluxus12.setText("Cultural Head");
 			tvFluxus13.setText("Sachin Londhe ( +919179623390 )");
-			tvFluxus4.setOnClickListener(call);
-			tvFluxus5.setOnClickListener(call);
-			tvFluxus7.setOnClickListener(call);
-			tvFluxus9.setOnClickListener(call);
-			tvFluxus11.setOnClickListener(call);
-			tvFluxus13.setOnClickListener(call);
+			
 	  }
-	  OnClickListener call = new OnClickListener() {
-
-			public void onClick(View v) {
-
-				String number = ((TextView) v).getText().toString();
-				number = number.substring(number.indexOf("+91"),
-						number.indexOf("+91") + 13);
-				Intent intent = new Intent(Intent.ACTION_DIAL);
-				intent.setData(Uri.parse("tel:" + number));
-				startActivity(intent);
-
-			}
-		};
+	 
 }
 

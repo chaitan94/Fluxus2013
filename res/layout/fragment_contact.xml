@@ -33,12 +33,14 @@
 
                         <com.IITI.fluxus13.MyTextView
                             android:id="@+id/tvFluxus4"
+                            android:autoLink="phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="22sp" />
 
                         <com.IITI.fluxus13.MyTextView
                             android:id="@+id/tvFluxus5"
+                            android:autoLink="phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="22sp" />
@@ -52,6 +54,7 @@
 
                         <com.IITI.fluxus13.MyTextView
                             android:id="@+id/tvFluxus7"
+                            android:autoLink="phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="22sp" />
@@ -65,6 +68,7 @@
 
                         <com.IITI.fluxus13.MyTextView
                             android:id="@+id/tvFluxus9"
+                            android:autoLink="phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="22sp" />
@@ -78,6 +82,7 @@
 
                         <com.IITI.fluxus13.MyTextView
                             android:id="@+id/tvFluxus11"
+                            android:autoLink="phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="22sp" />
@@ -91,6 +96,7 @@
 
                         <com.IITI.fluxus13.MyTextView
                             android:id="@+id/tvFluxus13"
+                            android:autoLink="phone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="22sp" />
