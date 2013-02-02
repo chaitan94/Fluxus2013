@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -21,6 +22,7 @@ public class FragmentEvents extends SherlockFragment {
 	ListView lvMaraEvents;
 	ListView lvProEvents;
 	ListView lvInformalEvents;
+	ListView lvWorkshops;
 	static ListView lvEventTypes;
 
 	static int level = 0;
@@ -37,6 +39,7 @@ public class FragmentEvents extends SherlockFragment {
 		lvTechEvents.setOnItemClickListener(listClick);
 		lvInformalEvents.setOnItemClickListener(listClick);
 		lvMaraEvents.setOnItemClickListener(listClick);
+		lvWorkshops.setOnItemClickListener(listClick);
 		lvEventTypes.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1,
@@ -60,9 +63,15 @@ public class FragmentEvents extends SherlockFragment {
 				case 4:
 					llEvents.addView(lvMaraEvents);
 					break;
+				case 5:
+					llEvents.addView(lvWorkshops);
+					break;
 				}
 			}
 		});
+//		ImageView test = new ImageView(getActivity());
+//		test.setBackgroundResource(R.drawable.bg);
+//		lvEventTypes.addView(test);
 		return view;
 	}
 
@@ -76,6 +85,7 @@ public class FragmentEvents extends SherlockFragment {
 		lvMaraEvents = (ListView) view.findViewById(R.id.lvMaraEvents);
 		lvInformalEvents = (ListView) view.findViewById(R.id.lvInformalEvents);
 		lvEventTypes = (ListView) view.findViewById(R.id.lvEventTypes);
+		lvWorkshops = (ListView) view.findViewById(R.id.lvWorkshops);
 		llEvents.removeAllViews();
 		llEvents.addView(lvEventTypes);
 

@@ -12,8 +12,17 @@
         <item>@array/techEvents</item>
         <item>@array/informalEvents</item>
         <item>@array/maraEvents</item>
+        <item>@array/workshops</item>
     </array>
 
+    <string-array id="eventTypes" name="eventTypes">
+        <item>Pro-Shows</item>
+        <item>Culturals</item>
+        <item>Technicals</item>
+        <item>Informals</item>
+        <item>Marathon</item>
+        <item>Workshops</item>
+    </string-array>
     <string-array id="proEvents" name="proEvents">
         <item>Stand-up Comedy</item>
         <item>Bands..Bang! Bang!! Boom!!!</item>
@@ -51,12 +60,11 @@
     <string-array id="maraEvents" name="maraEvents">
         <item>Respect For Women</item>
     </string-array>
-    <string-array id="eventTypes" name="eventTypes">
-        <item>Pro-Shows</item>
-        <item>Culturals</item>
-        <item>Technicals</item>
-        <item>Informals</item>
-        <item>Marathon</item>
+    <string-array id="workshops" name="workshops">
+        <item>Auto Spark</item>
+        <item>HackIN 2.0</item>
+        <item>Wings</item>
+        <item>Full Throttle</item>
     </string-array>
     <string-array id="fluxusStr" name="fluxusStr">
         <item> IIT Indore\'s Techno-Cultural Fest </item>

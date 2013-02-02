@@ -14,13 +14,10 @@ public class Home extends Activity {
 	Button home;
 	MyTextView enter;
 
-	// HomeView bhew;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home);
-		// bhew = new HomeView(this);
 		// setContentView(bhew);
 		home = (Button) findViewById(R.id.bFlux);
 		enter = (MyTextView) findViewById(R.id.bEnter);

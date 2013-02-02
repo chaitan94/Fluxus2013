@@ -140,6 +140,22 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 				break;
 			}
 			break;
+		case 5:
+			switch ((gotBasket.getInt("key"))) {
+			case 0:
+				detail = "Ever wondered how 400Kmph speed demons are built? How a slightest configuration change can help you milk another 10-20Kmph from your car and help you set a new record? Well then AutoSPARK is just the thing for you! From aerodynamic design to suspensions, automotive parts will be explained with their contributions towards the ultimate driving machine. If you are an Automotive savvy then this is the place to be!";
+				break;
+			case 1:
+				detail = "Cyber security is of utmost importance in the contemporary world. Sensitive information is often exchanged through the internet, and is prone to theft. Enterprise or Individual, the risk is always large, and HackIN will prevent you from being compromised. From Google database hacking to OS passkey bypassing, Emails to hacking via USB, HackIN is going to make sure that you are aware of how cyber threats arise, so you may always be ready for them. Moreover, bragging rights complement this course, as you may always show off the skills you have honed ;)";
+				break;
+			case 2:
+				detail = "Remember those paper gliders that you made when you were a child? Now it's time to give Wings to your dreams, and Wings has you covered! Nitty-gritties of Aerodynamics, Gliders, and even RC controlled planes, will be dealt with so that you can SWOOOSH past your competition and show who is boss! If you want to hold the current mini aircraft speed record, then this course will give you just what you need, So... CHOCKS AWAY!";
+				break;
+			case 3:
+				detail = "Gentlemen! Start your engines! Racing heritage associated with legendary cars such as the McLaren F1 GTR, The Shelby Daytona Coupe, The Porsche 917 Le Mans, has actually inspired millions to recreate these legends in the contemporary world... and the result was Radio Controlled Racing cars! And that is what Full Throttle is all about. Full Throttle will give you the opportunity to indulge into the RC Racing culture, and will help you build your ultimate race car, and even give you a chance to witness the awesomeness of Nitro RC cars, which are capable of leaving a BIG lot of road cars in the dust!";
+				break;
+			}
+			break;
 		}
 
 		title.setText(name);
