@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <ScrollView
+        android:id="@+id/svContact"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/llContact"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus2h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Note: Click a number to call"
+                android:textSize="16sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#196AFF"
+                android:textSize="30sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#196AFF"
+                android:textSize="30sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#196AFF"
+                android:textSize="30sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#196AFF"
+                android:textSize="30sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#196AFF"
+                android:textSize="30sp" />
+
+            <com.IITI.fluxus13.MyTextView
+                android:id="@+id/tvFluxus13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

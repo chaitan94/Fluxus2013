@@ -1,7 +1,5 @@
 package com.IITI.fluxus13;
 
-import org.apache.http.impl.conn.tsccm.WaitingThread;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,6 +32,7 @@ public class Home extends Activity {
 			public void onClick(View v) {
 				home.startAnimation(animScale);
 				Thread waitu = new Thread() {
+					@Override
 					public void run() {
 						try {
 							sleep(1500);

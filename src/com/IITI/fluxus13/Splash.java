@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
-import android.widget.ImageView;
 
 public class Splash extends Activity{
 
@@ -15,6 +14,7 @@ public class Splash extends Activity{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.splash);
 		Thread timer = new Thread(){
+			@Override
 			public void run(){
 				try {
 					sleep(1800);

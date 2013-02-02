@@ -1,14 +1,22 @@
 package com.IITI.fluxus13;
 
+import java.util.Calendar;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
+import android.provider.CalendarContract.Events;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class EventDialog extends Activity implements OnClickListener{
+public class EventDialog extends FragmentActivity implements OnClickListener {
 
 	TextView title;
 	TextView description;
@@ -58,7 +66,7 @@ public class EventDialog extends Activity implements OnClickListener{
 				break;
 			case 4:
 				detail = "A marvelous opportunity to stir people up by stirring your feet. You choose the number of feet and we judge the rhythm. Welcome to a night of fun and frolic where the best dance groups will be pitted against each other, constantly trying to prove their mettle by making you sway in rhythm to their groovy, enthralling dance moves. The only question is: Can you handle the thrill and exhilaration???";
-					break;
+				break;
 			case 5:
 				detail = "Charge up your nerve cells, sharpen up your brain and slay the questions put forth by our quizmaster... Or get slayed... This is your chance to show us that you are well-versed on any topic under the sun... And we literally mean ANY!!! So all the brains around, come defeat light itself!!!";
 				break;
@@ -127,7 +135,8 @@ public class EventDialog extends Activity implements OnClickListener{
 			switch ((gotBasket.getInt("key"))) {
 			case 0:
 				detail = "In a society that claims to be advancing rapidly on all counts right from planning missions to the Mars to the development of nuclear energy, incidents like brutal rapes, molestation of women bring us back to square one. Have we just progressed materially? Haven't we achieved anything morally? This is the time when we must make the people realize that a woman is not a toy but the mother of all the creations. It is with this goal in mind that we are organizing the marathon themed on 'Respect for Women'. Being on the highest level of intelligence it is our moral and humane responsibly to stand up for the causes of women and exhibit our whole-hearted support by participating in the marathon.";
-//				detail = "A marathon, with the message \"Education for all\" has been organized by the college in the upcoming Fluxus. Education is a matter of national concern in India, owing to the relatively low literary rates in the country among the economically backward people, and the marathon carries a strong message of complete education and awareness among everyone, regardless of their financial background.";
+				// detail =
+				// "A marathon, with the message \"Education for all\" has been organized by the college in the upcoming Fluxus. Education is a matter of national concern in India, owing to the relatively low literary rates in the country among the economically backward people, and the marathon carries a strong message of complete education and awareness among everyone, regardless of their financial background.";
 				break;
 			}
 			break;
@@ -137,16 +146,33 @@ public class EventDialog extends Activity implements OnClickListener{
 		description.setText("Description: " + detail);
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		switch(v.getId()){
+		switch (v.getId()) {
 		case R.id.bSetRem:
-			
+			Calendar beginTime = Calendar.getInstance();
+			beginTime.set(2013, 2, 15, 7, 30);
+			Calendar endTime = Calendar.getInstance();
+			endTime.set(2013, 2, 15, 11, 30);
+			Intent set = new Intent(Intent.ACTION_INSERT)
+					.setData(Events.CONTENT_URI)
+					.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+							beginTime.getTimeInMillis())
+					.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
+							endTime.getTimeInMillis())
+					.putExtra(Events.TITLE, name)
+					.putExtra(Events.DESCRIPTION, detail)
+					.putExtra(Events.EVENT_LOCATION, "IIT Indore")
+					.putExtra(Events.AVAILABILITY, Events.AVAILABILITY_BUSY)
+					.putExtra(Intent.EXTRA_EMAIL, "bkchaitan94@gmail.com");
+			startActivity(set);
 			break;
 		case R.id.bCloseEventDialog:
 			finish();
 			break;
 		}
 	}
+
 }
