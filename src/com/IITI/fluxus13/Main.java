@@ -144,7 +144,7 @@ public void onBackPressed(){
 			R.anim.listoutrev);
 	final Animation listinrev = AnimationUtils.loadAnimation(this,
 			R.anim.listinrev);
-	if (FragmentEvents.level == 1) {
+	if (FragmentEvents.level == 1&&actionBar.getSelectedTab().getPosition()==1) {
 	FragmentEvents.onBack(listoutrev, listinrev);
 	} else {
 		new AlertDialog.Builder(this)

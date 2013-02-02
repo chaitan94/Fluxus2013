@@ -38,6 +38,18 @@
                             android:layout_height="wrap_content"
                             android:textSize="22sp"
                             android:paddingBottom="20dp" />
+                        
+            <Button
+                android:id="@+id/bIITI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go to IITI&apos;s website" />
+
+            <Button
+                android:id="@+id/bFluxus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Go to Fluxus official website" />
 
                     </LinearLayout>
                 </ScrollView>

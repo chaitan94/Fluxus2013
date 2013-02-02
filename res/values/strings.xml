@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Fluxus 2013</string>
+    <string name="about_title">About Us</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="summary">An exceptional confluence of exquisite cultural displays with state-of-the-art technological innovations reverberating in an aura filled with excitement, amusement and splendour. Discover your indigenous creativity, set yourself astray from the usual monotonous life and delve into the trenches of exhilaration and entertainment.</string>
@@ -12,6 +13,7 @@
         <item>@array/techEvents</item>
         <item>@array/informalEvents</item>
         <item>@array/maraEvents</item>
+          <item>@array/workshops</item>
     </array>
 
     <string-array id="proEvents" name="proEvents">
@@ -51,12 +53,19 @@
     <string-array id="maraEvents" name="maraEvents">
         <item>Respect For Women</item>
     </string-array>
+       <string-array id="workshops" name="workshops">
+        <item>Auto Spark</item>
+        <item>HackIN 2.0</item>
+        <item>Wings</item>
+        <item>Full Throttle</item>
+        </string-array>
     <string-array id="eventTypes" name="eventTypes">
         <item>Pro-Shows</item>
         <item>Culturals</item>
         <item>Technicals</item>
         <item>Informals</item>
         <item>Marathon</item>
+        <item>Workshops</item>
     </string-array>
     <string-array id="fluxusStr" name="fluxusStr">
         <item> IIT Indore\'s Techno-Cultural Fest </item>

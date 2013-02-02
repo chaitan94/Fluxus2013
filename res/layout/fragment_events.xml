@@ -66,6 +66,13 @@
                         android:layout_weight="1"
                         android:entries="@array/maraEvents" >
                     </ListView>
+                      <ListView
+            android:id="@+id/lvWorkshops"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:entries="@array/workshops" >
+        </ListView>
 </LinearLayout>               
 
 </RelativeLayout>

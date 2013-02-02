@@ -6,18 +6,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
 
-public class FragmentFluxus extends SherlockFragment {
+public class FragmentFluxus extends SherlockFragment implements OnClickListener {
 	ImageView ivFluxus;
 	TextView tvFluxus1;
 	TextView tvFluxus2;
+	Button flux, iiti;
 	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,21 +38,37 @@ public class FragmentFluxus extends SherlockFragment {
 	ivFluxus = (ImageView) view.findViewById(R.id.ivFluxus);
 	tvFluxus1 = (TextView) view.findViewById(R.id.tvFluxus1);
 	tvFluxus2 = (TextView) view.findViewById(R.id.tvFluxus2);
-	
+	flux = (Button) view.findViewById(R.id.bFluxus);
+	iiti = (Button) view.findViewById(R.id.bIITI);
 	tvFluxus1.setText("IIT Indore's Techno-Cultural Fest");
 	tvFluxus2.setText(getResources().getString(R.string.summary));
 	
-	ivFluxus.setOnClickListener(new OnClickListener() {
-
-		public void onClick(View v) {
-			Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri
-					.parse("http://www.fluxus.in"));
-			startActivity(browserIntent);
-		}
-	});
-	
+	ivFluxus.setOnClickListener(this);
+	flux.setOnClickListener(this);
+	iiti.setOnClickListener(this);
 	}
-	
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch(v.getId()){
+		case R.id.ivFluxus:
+			Intent browserIntent1 = new Intent(Intent.ACTION_VIEW, Uri
+					.parse("http://www.fluxus.in"));
+			startActivity(browserIntent1);
+			break;
+		case R.id.bFluxus:
+			Intent browserIntent2 = new Intent(Intent.ACTION_VIEW, Uri
+					.parse("http://www.fluxus.in"));
+			startActivity(browserIntent2);
+			break;
+		case R.id.bIITI:
+			Intent browserIntent3 = new Intent(Intent.ACTION_VIEW, Uri
+					.parse("http://iiti.ac.in"));
+			startActivity(browserIntent3);
+
+			break;
+		}
+	}
 	}
 
 

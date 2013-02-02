@@ -23,6 +23,7 @@ public class FragmentEvents extends SherlockFragment {
 	static ListView lvMaraEvents;
 	static ListView lvProEvents;
 	static ListView lvInformalEvents;
+	static ListView lvWorkshops;
 	static  ListView lvEventTypes;
 	static int level = 0;
 	 static int typeOfEvent = -1;
@@ -43,6 +44,7 @@ public class FragmentEvents extends SherlockFragment {
     		lvTechEvents.setOnItemClickListener(listClick);
     		lvInformalEvents.setOnItemClickListener(listClick);
     		lvMaraEvents.setOnItemClickListener(listClick);
+    		lvWorkshops.setOnItemClickListener(listClick);
     		lvEventTypes.setOnItemClickListener(new OnItemClickListener() {
     			@Override
     			public void onItemClick(AdapterView<?> arg0, View arg1,
@@ -72,6 +74,9 @@ public class FragmentEvents extends SherlockFragment {
     					lvMaraEvents.startAnimation(listin);
     					llEvents.addView(lvMaraEvents);
     					break;
+    				case 5:
+    					lvWorkshops.startAnimation(listin);
+    					llEvents.addView(lvWorkshops);
     				}
     			}
     		});
@@ -88,6 +93,7 @@ llEvents = (LinearLayout) view.findViewById(R.id.llEvents);
 		lvMaraEvents = (ListView) view.findViewById(R.id.lvMaraEvents);
 		lvInformalEvents = (ListView) view.findViewById(R.id.lvInformalEvents);
 		lvEventTypes = (ListView) view.findViewById(R.id.lvEventTypes);
+		lvWorkshops = (ListView) view.findViewById(R.id.lvWorkshops);
 		llEvents.removeAllViews();
 		llEvents.addView(lvEventTypes);
 		
@@ -135,6 +141,10 @@ llEvents = (LinearLayout) view.findViewById(R.id.llEvents);
 		case 4:
 			lvMaraEvents.startAnimation(listoutrev);
 			llEvents.removeView(lvMaraEvents);
+			break;
+		case 5:
+			lvWorkshops.startAnimation(listoutrev);
+			llEvents.removeView(lvWorkshops);
 			break;
 		}
 		lvEventTypes.startAnimation(listinrev);
