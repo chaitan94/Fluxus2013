@@ -3,16 +3,14 @@ package com.IITI.fluxus13;
 import java.util.Calendar;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Events;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,20 +19,24 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 	TextView title;
 	TextView description;
 	String name, detail;
-	Button remind, close;
+	Button remind, close, reg, rul;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+//		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.event);
 		Bundle gotBasket = getIntent().getExtras();
 		title = (TextView) findViewById(R.id.tvTitle);
 		description = (TextView) findViewById(R.id.tvDescription);
 		remind = (Button) findViewById(R.id.bSetRem);
 		close = (Button) findViewById(R.id.bCloseEventDialog);
+		reg = (Button) findViewById(R.id.bReg);
+		rul = (Button) findViewById(R.id.bRules);
 		remind.setOnClickListener(this);
 		close.setOnClickListener(this);
+		reg.setOnClickListener(this);
+		rul.setOnClickListener(this);
 		name = gotBasket.getString("naam");
 		switch ((gotBasket.getInt("typeEvent"))) {
 		case 0:
@@ -159,7 +161,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		}
 
 		title.setText(name);
-		description.setText("Description: " + detail);
+		description.setText("    " + detail);
 	}
 
 	@SuppressLint("NewApi")
@@ -187,6 +189,13 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 			break;
 		case R.id.bCloseEventDialog:
 			finish();
+			break;
+		case R.id.bReg:
+			//Hypothetical link
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fluxus.in/register")));
+			break;
+		case R.id.bRules:
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fluxus.in/" + name)));
 			break;
 		}
 	}

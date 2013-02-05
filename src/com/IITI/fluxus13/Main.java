@@ -11,6 +11,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
@@ -125,10 +127,10 @@ public class Main extends SherlockFragmentActivity {
 
 	@Override
 	public void onBackPressed() {
+		final Animation listoutrev = AnimationUtils.loadAnimation(this,
+				R.anim.listoutrev);
 		if (FragmentEvents.level == 1 && actionBar.getSelectedTab().getPosition()==1) {
-			FragmentEvents.llEvents.removeAllViews();
-			FragmentEvents.llEvents.addView(FragmentEvents.lvEventTypes);
-			FragmentEvents.level = 0;
+			FragmentEvents.onBack(listoutrev);
 		} else {
 			new AlertDialog.Builder(this)
 					.setIcon(android.R.drawable.ic_dialog_alert)

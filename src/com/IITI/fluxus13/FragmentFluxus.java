@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockFragment;
 
 public class FragmentFluxus extends SherlockFragment implements OnClickListener {
-	ImageView ivFluxus;
+	static ImageView ivFluxus;
 	TextView tvFluxus1;
 	TextView tvFluxus2;
 	Button flux, iiti;
@@ -49,20 +49,13 @@ public class FragmentFluxus extends SherlockFragment implements OnClickListener 
 		// TODO Auto-generated method stub
 		switch(v.getId()){
 		case R.id.ivFluxus:
-			Intent browserIntent1 = new Intent(Intent.ACTION_VIEW, Uri
-					.parse("http://www.fluxus.in"));
-			startActivity(browserIntent1);
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fluxus.in")));
 			break;
 		case R.id.bFluxus:
-			Intent browserIntent2 = new Intent(Intent.ACTION_VIEW, Uri
-					.parse("http://www.fluxus.in"));
-			startActivity(browserIntent2);
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fluxus.in")));
 			break;
 		case R.id.bIITI:
-			Intent browserIntent3 = new Intent(Intent.ACTION_VIEW, Uri
-					.parse("http://iiti.ac.in"));
-			startActivity(browserIntent3);
-			
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://iiti.ac.in")));
 			break;
 		}
 	}

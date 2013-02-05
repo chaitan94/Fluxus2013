@@ -32,11 +32,6 @@ public class Splash extends Activity{
 
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
-//		ImageView logo = (ImageView) findViewById(R.id.imageView1);
-//		float x = logo.getX();
-//		float u = 0;
-//		logo.startAnimation(ag);
 		super.onPause();
 		finish();
 	}

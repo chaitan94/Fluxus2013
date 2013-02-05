@@ -18,16 +18,19 @@ public class Home extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.home);
-		// setContentView(bhew);
 		home = (Button) findViewById(R.id.bFlux);
 		enter = (MyTextView) findViewById(R.id.bEnter);
+		
 		final Animation animScale = AnimationUtils.loadAnimation(this,
 				R.anim.fluxscale);
+//		final ObjectAnimator go = ObjectAnimator.ofFloat(home, "Y", FragmentFluxus.ivFluxus.getY());
 		OnClickListener onEnter = new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				home.startAnimation(animScale);
+//				home.animate().translationY(FragmentFluxus.ivFluxus.getY());
+//				go.start();
 				Thread waitu = new Thread() {
 					@Override
 					public void run() {

@@ -27,7 +27,7 @@
                 android:id="@+id/tvFluxus3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#196AFF"
+                android:textColor="@color/bluetext"
                 android:textSize="30sp" />
 
             <com.IITI.fluxus13.MyTextView
@@ -46,7 +46,7 @@
                 android:id="@+id/tvFluxus6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#196AFF"
+                android:textColor="@color/bluetext"
                 android:textSize="30sp" />
 
             <com.IITI.fluxus13.MyTextView
@@ -59,7 +59,7 @@
                 android:id="@+id/tvFluxus8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#196AFF"
+                android:textColor="@color/bluetext"
                 android:textSize="30sp" />
 
             <com.IITI.fluxus13.MyTextView
@@ -72,7 +72,7 @@
                 android:id="@+id/tvFluxus10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#196AFF"
+                android:textColor="@color/bluetext"
                 android:textSize="30sp" />
 
             <com.IITI.fluxus13.MyTextView
@@ -85,7 +85,7 @@
                 android:id="@+id/tvFluxus12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#196AFF"
+                android:textColor="@color/bluetext"
                 android:textSize="30sp" />
 
             <com.IITI.fluxus13.MyTextView

@@ -1,22 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg2"
     android:orientation="vertical" >
 
     <com.IITI.fluxus13.MyTextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
         android:paddingTop="20dp"
         android:text="Event Title"
+        android:textColor="@color/bluetext"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="28sp" />
 
+    <LinearLayout
+        android:id="@+id/remNclose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <Button
+            android:id="@+id/bSetRem"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:textColor="#CCCCCC"
+            android:background="@drawable/buttn"
+            android:text="Remind" />
+
+        <Button
+            android:id="@+id/bCloseEventDialog"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:textColor="#CCCCCC"
+            android:background="@drawable/buttn"
+            android:text="Close" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/regNrules"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/remNclose"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <Button
+            android:id="@+id/bRules"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="50"
+            android:textColor="#CCCCCC"
+            android:background="@drawable/buttn"
+            android:text="Rules" />
+
+        <Button
+            android:id="@+id/bReg"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="50"
+            android:textColor="#CCCCCC"
+            android:background="@drawable/buttn"
+            android:text="Register" />
+    </LinearLayout>
+
     <ScrollView
-        android:layout_width="300dp"
-        android:layout_height="300dp" >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/regNrules"
+        android:layout_below="@id/tvTitle" >
 
         <com.IITI.fluxus13.MyTextView
             android:id="@+id/tvDescription"
@@ -27,25 +93,4 @@
             android:textSize="20sp" />
     </ScrollView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/bSetRem"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Remind" />
-
-        <Button
-            android:id="@+id/bCloseEventDialog"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Close" />
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

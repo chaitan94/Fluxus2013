@@ -54,7 +54,7 @@
         <activity
             android:name="com.IITI.fluxus13.EventDialog"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Dialog" >
+            android:theme="@android:style/Theme.Black" >
         </activity>
             </application>
 

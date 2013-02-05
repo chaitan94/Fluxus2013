@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -17,16 +18,16 @@ import com.actionbarsherlock.app.SherlockFragment;
 public class FragmentEvents extends SherlockFragment {
 	static LinearLayout llEvents;
 
-	ListView lvTechEvents;
-	ListView lvCultEvents;
-	ListView lvMaraEvents;
-	ListView lvProEvents;
-	ListView lvInformalEvents;
-	ListView lvWorkshops;
+	static ListView lvTechEvents;
+	static ListView lvCultEvents;
+	static ListView lvMaraEvents;
+	static ListView lvProEvents;
+	static ListView lvInformalEvents;
+	static ListView lvWorkshops;
 	static ListView lvEventTypes;
 
 	static int level = 0;
-	int typeOfEvent = -1;
+	static int typeOfEvent = -1;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,38 +41,50 @@ public class FragmentEvents extends SherlockFragment {
 		lvInformalEvents.setOnItemClickListener(listClick);
 		lvMaraEvents.setOnItemClickListener(listClick);
 		lvWorkshops.setOnItemClickListener(listClick);
+		final Animation listin = AnimationUtils.loadAnimation(
+				view.getContext(), R.anim.listin);
+		final Animation listoutrev = AnimationUtils.loadAnimation(
+				view.getContext(), R.anim.listoutrev);
 		lvEventTypes.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1,
 					int position, long arg3) {
-				level = 1;
-				llEvents.removeAllViews();
-				typeOfEvent = position;
-				switch (position) {
-				case 0:
-					llEvents.addView(lvProEvents);
-					break;
-				case 1:
-					llEvents.addView(lvCultEvents);
-					break;
-				case 2:
-					llEvents.addView(lvTechEvents);
-					break;
-				case 3:
-					llEvents.addView(lvInformalEvents);
-					break;
-				case 4:
-					llEvents.addView(lvMaraEvents);
-					break;
-				case 5:
-					llEvents.addView(lvWorkshops);
-					break;
+				if (typeOfEvent != position) {
+					if (level == 1) {
+						llEvents.getChildAt(1).startAnimation(listoutrev);
+						llEvents.removeViewAt(1);
+					}
+					level = 1;
+					typeOfEvent = position;
+					switch (position) {
+					case 0:
+						llEvents.addView(lvProEvents);
+						lvProEvents.startAnimation(listin);
+						break;
+					case 1:
+						llEvents.addView(lvCultEvents);
+						lvCultEvents.startAnimation(listin);
+						break;
+					case 2:
+						llEvents.addView(lvTechEvents);
+						lvTechEvents.startAnimation(listin);
+						break;
+					case 3:
+						llEvents.addView(lvInformalEvents);
+						lvInformalEvents.startAnimation(listin);
+						break;
+					case 4:
+						llEvents.addView(lvMaraEvents);
+						lvMaraEvents.startAnimation(listin);
+						break;
+					case 5:
+						llEvents.addView(lvWorkshops);
+						lvWorkshops.startAnimation(listin);
+						break;
+					}
 				}
 			}
 		});
-//		ImageView test = new ImageView(getActivity());
-//		test.setBackgroundResource(R.drawable.bg);
-//		lvEventTypes.addView(test);
 		return view;
 	}
 
@@ -112,5 +125,35 @@ public class FragmentEvents extends SherlockFragment {
 			}
 		}
 	};
+
+	public static void onBack(Animation listoutrev) {
+		switch (typeOfEvent) {
+		case 0:
+			lvProEvents.startAnimation(listoutrev);
+			llEvents.removeView(lvProEvents);
+			break;
+		case 1:
+			lvCultEvents.startAnimation(listoutrev);
+			llEvents.removeView(lvCultEvents);
+			break;
+		case 2:
+			lvTechEvents.startAnimation(listoutrev);
+			llEvents.removeView(lvTechEvents);
+			break;
+		case 3:
+			lvInformalEvents.startAnimation(listoutrev);
+			llEvents.removeView(lvInformalEvents);
+			break;
+		case 4:
+			lvMaraEvents.startAnimation(listoutrev);
+			llEvents.removeView(lvMaraEvents);
+			break;
+		case 5:
+			lvWorkshops.startAnimation(listoutrev);
+			llEvents.removeView(lvWorkshops);
+			break;
+		}
+		level = 0;
+	}
 
 }
