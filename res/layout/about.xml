@@ -38,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="30dp"
+                android:autoLink="web"
                 android:text="Facebook Page: 
                 https://www.facebook.com/fluxus.iiti/"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -69,6 +70,7 @@
                 android:id="@+id/tvFeedback"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoLink="email"
                 android:text="If you have any suggetions/ideas for the app, just e-mail me at 
                 bkchaitan94@gmail.com" />
 
@@ -76,6 +78,7 @@
                 android:id="@+id/tvFeedbackFlux"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoLink="email"
                 android:text="Or if you have any feedback related to the Fluxus event contact us at 
                 contactus@fluxus.in" />
         </LinearLayout>

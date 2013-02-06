@@ -17,13 +17,6 @@
             android:padding="10dp" >
 
             <com.IITI.fluxus13.MyTextView
-                android:id="@+id/tvFluxus2h"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Note: Click a number to call"
-                android:textSize="16sp" />
-
-            <com.IITI.fluxus13.MyTextView
                 android:id="@+id/tvFluxus3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,12 +27,14 @@
                 android:id="@+id/tvFluxus4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autoLink="phone"
                 android:textSize="22sp" />
 
             <com.IITI.fluxus13.MyTextView
                 android:id="@+id/tvFluxus5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autoLink="phone"
                 android:textSize="22sp" />
 
             <com.IITI.fluxus13.MyTextView
@@ -53,6 +48,7 @@
                 android:id="@+id/tvFluxus7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autoLink="phone"
                 android:textSize="22sp" />
 
             <com.IITI.fluxus13.MyTextView
@@ -66,6 +62,7 @@
                 android:id="@+id/tvFluxus9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autoLink="phone"
                 android:textSize="22sp" />
 
             <com.IITI.fluxus13.MyTextView
@@ -79,6 +76,7 @@
                 android:id="@+id/tvFluxus11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autoLink="phone"
                 android:textSize="22sp" />
 
             <com.IITI.fluxus13.MyTextView
@@ -92,6 +90,7 @@
                 android:id="@+id/tvFluxus13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autoLink="phone"
                 android:textSize="22sp" />
         </LinearLayout>
     </ScrollView>

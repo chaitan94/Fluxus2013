@@ -1,12 +1,9 @@
 package com.IITI.fluxus13;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
@@ -46,36 +43,15 @@ public class FragmentContact extends SherlockFragment {
 		tvFluxus12 = (TextView) view.findViewById(R.id.tvFluxus12);
 		tvFluxus13 = (TextView) view.findViewById(R.id.tvFluxus13);
 		tvFluxus3.setText("Overall Coordinators");
-		tvFluxus4.setText("Arpit Jain ( +919826084568 )");
-		tvFluxus5.setText("Jwalant Shah ( +918871749707 )");
+		tvFluxus4.setText("Arpit Jain (+919826084568)");
+		tvFluxus5.setText("Jwalant Shah (+918871749707)");
 		tvFluxus6.setText("Marketing Head");
-		tvFluxus7.setText("Apoorv Goyal ( +918962447275 )");
+		tvFluxus7.setText("Apoorv Goyal (+918962447275)");
 		tvFluxus8.setText("Design Head");
-		tvFluxus9.setText("Gagan Jakhotiya ( +919074888822 )");
+		tvFluxus9.setText("Gagan Jakhotiya (+919074888822)");
 		tvFluxus10.setText("Financing Head");
-		tvFluxus11.setText("Rahul Pawar ( +917566569192 )");
+		tvFluxus11.setText("Rahul Pawar (+917566569192)");
 		tvFluxus12.setText("Cultural Head");
-		tvFluxus13.setText("Sachin Londhe ( +919179623390 )");
-		tvFluxus4.setOnClickListener(call);
-		tvFluxus5.setOnClickListener(call);
-		tvFluxus7.setOnClickListener(call);
-		tvFluxus9.setOnClickListener(call);
-		tvFluxus11.setOnClickListener(call);
-		tvFluxus13.setOnClickListener(call);
+		tvFluxus13.setText("Sachin Londhe (+919179623390)");
 	}
-
-	OnClickListener call = new OnClickListener() {
-
-		@Override
-		public void onClick(View v) {
-
-			String number = ((TextView) v).getText().toString();
-			number = number.substring(number.indexOf("+91"),
-					number.indexOf("+91") + 13);
-			Intent intent = new Intent(Intent.ACTION_DIAL);
-			intent.setData(Uri.parse("tel:" + number));
-			startActivity(intent);
-
-		}
-	};
 }
