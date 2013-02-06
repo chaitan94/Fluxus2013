@@ -112,7 +112,6 @@ public class FragmentEvents extends SherlockFragment {
 			Bundle basket = new Bundle();
 			String blah = ((AdapterView<ListAdapter>) arg1.getParent())
 					.getItemAtPosition(position).toString();
-			basket.putString("naam", blah);
 			basket.putInt("typeEvent", typeOfEvent);
 			basket.putInt("key", position);
 			try {

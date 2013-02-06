@@ -5,16 +5,40 @@
     android:background="@drawable/bg2"
     android:orientation="vertical" >
 
-    <com.IITI.fluxus13.MyTextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/lvTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:paddingTop="20dp"
-        android:text="Event Title"
-        android:textColor="@color/bluetext"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="28sp" />
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:weightSum="100" >
+
+        <Button
+            android:id="@+id/bPrevEvent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="12"
+            android:background="@drawable/prevbtn" />
+
+        <com.IITI.fluxus13.MyTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="76"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/bluetext"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/bNextEvent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="12"
+            android:background="@drawable/nxtbtn" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/remNclose"
@@ -31,9 +55,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:textColor="#CCCCCC"
             android:background="@drawable/buttn"
-            android:text="Remind" />
+            android:text="Remind"
+            android:textColor="#CCCCCC" />
 
         <Button
             android:id="@+id/bCloseEventDialog"
@@ -41,9 +65,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:textColor="#CCCCCC"
             android:background="@drawable/buttn"
-            android:text="Close" />
+            android:text="Close"
+            android:textColor="#CCCCCC" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,9 +86,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="50"
-            android:textColor="#CCCCCC"
             android:background="@drawable/buttn"
-            android:text="Rules" />
+            android:text="Rules"
+            android:textColor="#CCCCCC" />
 
         <Button
             android:id="@+id/bReg"
@@ -73,16 +97,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="50"
-            android:textColor="#CCCCCC"
             android:background="@drawable/buttn"
-            android:text="Register" />
+            android:text="Register"
+            android:textColor="#CCCCCC" />
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/regNrules"
-        android:layout_below="@id/tvTitle" >
+        android:layout_below="@id/lvTitle" >
 
         <com.IITI.fluxus13.MyTextView
             android:id="@+id/tvDescription"
