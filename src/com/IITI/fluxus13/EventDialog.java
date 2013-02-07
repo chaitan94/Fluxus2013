@@ -16,8 +16,7 @@ import android.widget.TextView;
 
 public class EventDialog extends FragmentActivity implements OnClickListener {
 
-	TextView title;
-	TextView description;
+	TextView title, description;
 	String name, detail;
 	Button remind, close, reg, rul, next, prev;
 	int evtType, evtNum;
@@ -30,7 +29,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		Bundle gotBasket = getIntent().getExtras();
 		evtType = gotBasket.getInt("typeEvent");
 		evtNum = gotBasket.getInt("key");
-		
+
 		title = (TextView) findViewById(R.id.tvTitle);
 		description = (TextView) findViewById(R.id.tvDescription);
 		remind = (Button) findViewById(R.id.bSetRem);
@@ -46,21 +45,21 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		inf = getResources().getStringArray(R.array.informalEvents);
 		mara = getResources().getStringArray(R.array.maraEvents);
 		work = getResources().getStringArray(R.array.workshops);
-		
+
 		remind.setOnClickListener(this);
 		close.setOnClickListener(this);
 		reg.setOnClickListener(this);
 		rul.setOnClickListener(this);
 		prev.setOnClickListener(this);
 		next.setOnClickListener(this);
-		
+
 		setNameAndDetail(evtType, evtNum);
 	}
 
-	protected void setNameAndDetail(int evtType,int evtNum){
-		if(evtNum==0){
+	protected void setNameAndDetail(int evtType, int evtNum) {
+		if (evtNum == 0) {
 			prev.setVisibility(View.INVISIBLE);
-		}else{
+		} else {
 			prev.setVisibility(View.VISIBLE);
 		}
 		switch (evtType) {
@@ -197,7 +196,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		title.setText(name);
 		description.setText("    " + detail);
 	}
-	
+
 	@SuppressLint("NewApi")
 	@Override
 	public void onClick(View v) {
@@ -225,15 +224,22 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 			finish();
 			break;
 		case R.id.bReg:
-			//Hypothetical link
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fluxus.in/register")));
+			// Hypothetical link
+			startActivity(new Intent(Intent.ACTION_VIEW,
+					Uri.parse("http://www.fluxus.in/register")));
 			break;
 		case R.id.bRules:
-			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fluxus.in/" + name)));
+			startActivity(new Intent(Intent.ACTION_VIEW,
+					Uri.parse("http://www.fluxus.in/" + name)));
 			break;
 		case R.id.bPrevEvent:
 			evtNum--;
 			setNameAndDetail(evtType, evtNum);
+			if (next.isShown()) {
+
+			} else {
+				next.setVisibility(View.VISIBLE);
+			}
 			break;
 		case R.id.bNextEvent:
 			evtNum++;
