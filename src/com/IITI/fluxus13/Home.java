@@ -20,29 +20,30 @@ public class Home extends Activity {
 		setContentView(R.layout.home);
 		home = (Button) findViewById(R.id.bFlux);
 		enter = (MyTextView) findViewById(R.id.bEnter);
-		
+
 		final Animation animScale = AnimationUtils.loadAnimation(this,
 				R.anim.fluxscale);
-//		final ObjectAnimator go = ObjectAnimator.ofFloat(home, "Y", FragmentFluxus.ivFluxus.getY());
+		// final ObjectAnimator go = ObjectAnimator.ofFloat(home, "Y",
+		// FragmentFluxus.ivFluxus.getY());
 		OnClickListener onEnter = new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				home.startAnimation(animScale);
-//				home.animate().translationY(FragmentFluxus.ivFluxus.getY());
-//				go.start();
+				// home.animate().translationY(FragmentFluxus.ivFluxus.getY());
+				// go.start();
 				Thread waitu = new Thread() {
 					@Override
 					public void run() {
 						try {
-							sleep(1500);
+							sleep(800);
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						} finally {
 							startActivity(new Intent("com.IITI.fluxus13.MAIN"));
 							finish();
-							overridePendingTransition(0,0);
+							overridePendingTransition(0, 0);
 						}
 					}
 				};

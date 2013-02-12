@@ -129,7 +129,8 @@ public class Main extends SherlockFragmentActivity {
 	public void onBackPressed() {
 		final Animation listoutrev = AnimationUtils.loadAnimation(this,
 				R.anim.listoutrev);
-		if (FragmentEvents.level == 1 && actionBar.getSelectedTab().getPosition()==1) {
+		if (FragmentEvents.level == 1
+				&& actionBar.getSelectedTab().getPosition() == 1) {
 			FragmentEvents.onBack(listoutrev);
 		} else {
 			new AlertDialog.Builder(this)

@@ -29,6 +29,7 @@
                 android:id="@+id/tvFluxus1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:textColor="@color/bluetext"
                 android:textSize="30sp" />
 
@@ -36,6 +37,7 @@
                 android:id="@+id/tvFluxus2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:paddingBottom="20dp"
                 android:textSize="22sp" />
 

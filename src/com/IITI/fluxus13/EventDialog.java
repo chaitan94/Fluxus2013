@@ -53,6 +53,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		prev.setOnClickListener(this);
 		next.setOnClickListener(this);
 
+		name=detail="N/A";
 		setNameAndDetail(evtType, evtNum);
 	}
 
@@ -112,7 +113,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 				detail = "A designer knows he has achieved perfection not when there is nothing left to add, but when there is nothing left to take away. Can you can achieve the highest level of optimization and make your circuit stand out from the others while performing the same function?";
 				break;
 			case 2:
-				detail = "An international coding contest in which participants has to design and code an efficient algorithm for the given problem.";
+				detail = "\"A good programmer checks both ways while crossing a one way street... So if you are crossing the road, or you think you can, either ways, participate here and prove yourself. Participate in the programming contest at Fluxus '13, and compete for exciting prices.";
 				break;
 			case 3:
 				detail = "You are trapped in a deep dungeon and you must escape! Do not get us wrong here; this game has nothing to do with how strong your legs are. Design an eloquent bot that uses any means you can think of to escape out of a pit without touching its walls. Feel the heat as the height of the pit increases with the level.";
@@ -136,14 +137,17 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 				detail = "For every Tiger in the Woods, time has come to realize a sci-fi fantasy. On an artificial golf course, autonomous bots will try to outscore each other. It is an Image Processing based event where teams will use a live camera feed of the arena. The bots will decide their course of action to put maximum number of balls in holes in limited time. So mix your sporting and technical ideas and develop a golfer robo to assert your technical supremacy over others.";
 				break;
 			case 10:
-				detail = "If you think that all those hours you spent gaming were a waste of time, think again! This is your chance to prove just how good a gamer you are!!";
+				detail = "So, you think you keep yourself updated with the latest buzz of tech world???\"If you tried to read every document on the web, then for each day's effort, you would be a year further behind in your goal.\" So not just latest but it's about the whole journey of tech evolution... Do you think you're up to the challenge?? Then wait no further!! Join us to test your knowledge, and know where you stand...";
 				next.setVisibility(View.INVISIBLE);
 				break;
 			}
 			break;
 		case 3:
 			name = inf[evtNum];
-			switch ((evtNum)) {
+			switch ((evtNum-1)) {
+			case -1:
+				detail = "LiveCS is a game inspired from computer game 'Counter Strike'. It can also be viewed as a laser based adoption of paintball, which keeps the fun part of it and shuns its disadvantages. Counter Strike is played by two teams wherein each team tries to shoot out members of opposite team and emerge out as winner. liveCS is a real physical model of this computer game.";
+				break;
 			case 0:
 				detail = "Put aside your books and start zooming into the world with your camera lens. Hurry before time runs out: start now - Click! Click! Click!";
 				break;
@@ -188,6 +192,15 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 				break;
 			case 3:
 				detail = "Gentlemen! Start your engines! Racing heritage associated with legendary cars such as the McLaren F1 GTR, The Shelby Daytona Coupe, The Porsche 917 Le Mans, has actually inspired millions to recreate these legends in the contemporary world... and the result was Radio Controlled Racing cars! And that is what Full Throttle is all about. Full Throttle will give you the opportunity to indulge into the RC Racing culture, and will help you build your ultimate race car, and even give you a chance to witness the awesomeness of Nitro RC cars, which are capable of leaving a BIG lot of road cars in the dust!";
+				break;
+			case 4:
+				detail = "MATLAB is a widely used tool in all Engineering fields. MATLAB is a versatile software package that can be expanded by any interest group to match their special computational needs. As robotics is an ever-evolving domain, which requires constant innovation and technology advancements. Workshop will cover all the basics and essentials of MATLAB on the first day followed by practical Lab sessions. Second day will cover some advance level topics with practical implementation of Real Time Image Matching Project.";
+				break;
+			case 5:
+				detail = "Robotics is an ever-evolving domain, which requires constant innovation and technology advancements.The workshop will be a two day workshop divided into four sessions each covering exhaustive theory and practical.";
+				break;
+			case 6:
+				detail = "Two day advanced workshop on Android App Development.";
 				next.setVisibility(View.INVISIBLE);
 				break;
 			}
@@ -226,7 +239,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		case R.id.bReg:
 			// Hypothetical link
 			startActivity(new Intent(Intent.ACTION_VIEW,
-					Uri.parse("http://www.fluxus.in/register")));
+					Uri.parse("http://www.fluxus.in/registration")));
 			break;
 		case R.id.bRules:
 			startActivity(new Intent(Intent.ACTION_VIEW,
@@ -235,9 +248,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		case R.id.bPrevEvent:
 			evtNum--;
 			setNameAndDetail(evtType, evtNum);
-			if (next.isShown()) {
-
-			} else {
+			if (!next.isShown()) {
 				next.setVisibility(View.VISIBLE);
 			}
 			break;

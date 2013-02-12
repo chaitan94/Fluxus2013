@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 
-public class Splash extends Activity{
+public class Splash extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -13,17 +13,16 @@ public class Splash extends Activity{
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.splash);
-		Thread timer = new Thread(){
+		Thread timer = new Thread() {
 			@Override
-			public void run(){
+			public void run() {
 				try {
-					sleep(1800);
+					sleep(1500);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				} finally{
+				} finally {
 					startActivity(new Intent("com.IITI.fluxus13.HOME"));
-//					startActivity(new Intent("com.IITI.fluxus13.MAIN"));
 				}
 			}
 		};

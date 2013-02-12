@@ -153,6 +153,7 @@ public class FragmentEvents extends SherlockFragment {
 			break;
 		}
 		level = 0;
+		typeOfEvent = -1;
 	}
 
 }
