@@ -200,7 +200,10 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 				detail = "Robotics is an ever-evolving domain, which requires constant innovation and technology advancements.The workshop will be a two day workshop divided into four sessions each covering exhaustive theory and practical.";
 				break;
 			case 6:
-				detail = "Two day advanced workshop on Android App Development.";
+				detail = "Two day advanced workshop on Android App Development by Finland Labs.";
+				break;
+			case 7:
+				detail= "As information security increasingly becoming a boardroom level concern, training and certification are becoming increasingly important for candidates and companies.With a promising novel initiative on the cards, this year FLUXUS'13 in association with TechDefence decided to extend & prospectus of HackTrack- Hands on Workshop on Ethical Hacking and Information Security across India.";
 				next.setVisibility(View.INVISIBLE);
 				break;
 			}
