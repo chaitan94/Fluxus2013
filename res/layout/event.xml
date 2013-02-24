@@ -25,9 +25,9 @@
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="76"
             android:gravity="center"
-            android:layout_gravity="center"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/bluetext"
@@ -55,7 +55,10 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="50"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="33"
             android:background="@drawable/buttn"
             android:text="Remind"
             android:textColor="#CCCCCC" />
@@ -65,22 +68,30 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="50"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="34"
             android:background="@drawable/buttn"
             android:text="Close"
             android:textColor="#CCCCCC" />
-    </LinearLayout>
+        <!-- /LinearLayout -->
 
-    <LinearLayout
+
+        <!--
+          LinearLayout
         android:id="@+id/regNrules"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/remNclose"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:weightSum="100" >
+        android:weightSum="100"
+        -->
 
-        <Button
+
+        <!--
+              Button
             android:id="@+id/bRules"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
@@ -89,7 +100,8 @@
             android:layout_weight="50"
             android:background="@drawable/buttn"
             android:text="Rules"
-            android:textColor="#CCCCCC" />
+            android:textColor="#CCCCCC"
+        -->
 
         <Button
             android:id="@+id/bReg"
@@ -97,7 +109,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="50"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="33"
             android:background="@drawable/buttn"
             android:text="Register"
             android:textColor="#CCCCCC" />
@@ -106,7 +121,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/regNrules"
+        android:layout_above="@id/remNclose"
         android:layout_below="@id/lvTitle" >
 
         <com.IITI.fluxus13.MyTextView

@@ -18,7 +18,8 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 
 	TextView title, description;
 	String name, detail;
-	Button remind, close, reg, rul, next, prev;
+	Button remind, close, reg, next, prev;
+//	Button rul;
 	int evtType, evtNum;
 	String[] pro, cult, tech, inf, mara, work;
 
@@ -35,7 +36,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		remind = (Button) findViewById(R.id.bSetRem);
 		close = (Button) findViewById(R.id.bCloseEventDialog);
 		reg = (Button) findViewById(R.id.bReg);
-		rul = (Button) findViewById(R.id.bRules);
+		//rul = (Button) findViewById(R.id.bRules);
 		next = (Button) findViewById(R.id.bNextEvent);
 		prev = (Button) findViewById(R.id.bPrevEvent);
 
@@ -49,7 +50,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		remind.setOnClickListener(this);
 		close.setOnClickListener(this);
 		reg.setOnClickListener(this);
-		rul.setOnClickListener(this);
+//		rul.setOnClickListener(this);
 		prev.setOnClickListener(this);
 		next.setOnClickListener(this);
 
@@ -244,10 +245,10 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 			startActivity(new Intent(Intent.ACTION_VIEW,
 					Uri.parse("http://www.fluxus.in/registration")));
 			break;
-		case R.id.bRules:
-			startActivity(new Intent(Intent.ACTION_VIEW,
-					Uri.parse("http://www.fluxus.in/" + name)));
-			break;
+//		case R.id.bRules:
+//			startActivity(new Intent(Intent.ACTION_VIEW,
+//					Uri.parse("http://www.fluxus.in/" + name)));
+//			break;
 		case R.id.bPrevEvent:
 			evtNum--;
 			setNameAndDetail(evtType, evtNum);
