@@ -16,12 +16,13 @@ import android.widget.TextView;
 
 public class EventDialog extends FragmentActivity implements OnClickListener {
 
-	TextView title, description;
+	TextView title, description, tvfur;
 	String name, detail;
 	Button remind, close, reg, next, prev;
 //	Button rul;
+	boolean hasFurDetails;
 	int evtType, evtNum;
-	String[] pro, cult, tech, inf, mara, work;
+	String[] pro, cult, tech, inf, mara, work, furCultDetails, furTechDetails;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		evtNum = gotBasket.getInt("key");
 
 		title = (TextView) findViewById(R.id.tvTitle);
+		tvfur = (TextView) findViewById(R.id.tvFurDetails);
 		description = (TextView) findViewById(R.id.tvDescription);
 		remind = (Button) findViewById(R.id.bSetRem);
 		close = (Button) findViewById(R.id.bCloseEventDialog);
@@ -47,6 +49,9 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		mara = getResources().getStringArray(R.array.maraEvents);
 		work = getResources().getStringArray(R.array.workshops);
 
+		furCultDetails = getResources().getStringArray(R.array.furCultDetails);
+		furTechDetails = getResources().getStringArray(R.array.furTechDetails);
+
 		remind.setOnClickListener(this);
 		close.setOnClickListener(this);
 		reg.setOnClickListener(this);
@@ -54,8 +59,14 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		prev.setOnClickListener(this);
 		next.setOnClickListener(this);
 
+		hasFurDetails=false;
 		name=detail="N/A";
 		setNameAndDetail(evtType, evtNum);
+		if(evtType==1||evtType==2){
+			hasFurDetails=true;
+			tvfur.setText("Further Details.");
+			tvfur.setOnClickListener(this);
+		}
 	}
 
 	protected void setNameAndDetail(int evtType, int evtNum) {
@@ -93,12 +104,9 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 				detail = "Yeh prize mujhe dede fluxus! Is it the 'gabbarsingh' inside you dying to come out! Then bring 'him' to the drama competition hosted by IIT Indore, where some of the best actors will act to perfection, live to the emotion and compete to acquire the top position..let's find who takes away the best actor/actress award at the 3rd IITI academy awards ceremony!!!";
 				break;
 			case 3:
-				detail = "Let us get your adrenaline pumped up. Hold your breath for the most spectacular and dangerous stunts that will surpass your imagination";
-				break;
-			case 4:
 				detail = "The flavor of the stage, the panic of performance, the excitement and anxiety, the cheers and applause as you bow down to the audience...is what every dancer's dream. Are you one of those dancing freaks who can't stop tapping their feet whenever they hear the beats and share this dream, let Fluxus'13 bring it to life. So come, groove into ecstasy on the angelic beats at Fluxus and sway in rhythm with some groovy and enthralling moves. Prove your mettle while competing with some of the best in the business.";
 				break;
-			case 5:
+			case 4:
 				detail = "Quizooka is back...with some extremely thought provoking questions which will tease your brain and will put your wits in a quandary. With many categories of questions from 'identify-the-picture' to 'rapid fire', Quizooka will test the boundaries of your patience. Come and challenge yourself in this colossal quagmire of questions hosted by IIT Indore. It's time for your inner quiz wizard to wake up!!!";
 				next.setVisibility(View.INVISIBLE);
 				break;
@@ -259,6 +267,19 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 		case R.id.bNextEvent:
 			evtNum++;
 			setNameAndDetail(evtType, evtNum);
+			break;
+		case R.id.tvFurDetails:
+			// Hypothetical link
+			switch(evtType){
+			case 1:
+				startActivity(new Intent(Intent.ACTION_VIEW,
+						Uri.parse(furCultDetails[evtNum])));
+				break;
+			case 2:
+				startActivity(new Intent(Intent.ACTION_VIEW,
+						Uri.parse(furTechDetails[evtNum])));
+				break;
+			}
 			break;
 		}
 	}

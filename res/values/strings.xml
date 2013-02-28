@@ -2,6 +2,7 @@
 <resources>
 
     <color name="bluetext">#196AFF</color>
+
     <string name="app_name">Fluxus 2013</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
@@ -33,7 +34,6 @@
         <item>Model United Nations</item>
         <item>Treasure Raider</item>
         <item>Drama</item>
-        <item>Stunt Mania</item>
         <item>Dance</item>
         <item>Quizooka</item>
     </string-array>
@@ -70,7 +70,7 @@
         <item>Image RoboNortics</item>
         <item>Robo Blaze</item>
         <item>AppsFLUXUS\'13</item>
-        <item >CyberSec</item>
+        <item>CyberSec</item>
     </string-array>
     <string-array id="fluxusStr" name="fluxusStr">
         <item> IIT Indore\'s Techno-Cultural Fest </item>
@@ -87,7 +87,25 @@
         <item> Cultural Head </item>
         <item> Sachin Londhe ( +919179623390 ) </item>
     </string-array>
-
-
+    <string-array id="furCultDetails" name="furCultDetails">
+        <item>https://docs.google.com/file/d/0Bx95473oaVNwMXpSWDdwWkZvT2c/edit?usp=sharing</item>
+        <item>https://docs.google.com/file/d/0Bx95473oaVNwVGhWb1AxbDhaSHM/edit?usp=sharing</item>
+        <item>https://docs.google.com/file/d/0Bx95473oaVNwWTVtRDY3ZkR1ODg/edit?usp=sharing</item>
+        <item>https://docs.google.com/file/d/0Bx95473oaVNwTTlBeEdpVEVNLTA/edit?usp=sharing</item>
+        <item>https://docs.google.com/file/d/0Bx95473oaVNwakhsVGV1VkNrMDA/edit?usp=sharing</item>
+    </string-array>
+    <string-array id="furTechDetails" name="furTechDetails">
+        <item>http://www.fluxus.in/registration/civil.pdf</item>
+        <item>http://www.fluxus.in/registration/elecD.pdf</item>
+        <item>http://www.fluxus.in/registration/divO.pdf</item>
+        <item>http://www.fluxus.in/registration/dungB.pdf</item>
+        <item>http://www.fluxus.in/registration/aero.pdf</item>
+        <item>http://www.fluxus.in/registration/robo1.pdf</item>
+        <item>http://www.fluxus.in/registration/roboA.pdf</item>
+        <item>http://www.fluxus.in/registration/armada.pdf</item>
+        <item>http://www.fluxus.in/registration/roboS.pdf</item>
+        <item>http://www.fluxus.in/registration/roboG.pdf</item>
+        <item>http://www.fluxus.in/registration/techP.pdf</item>
+    </string-array>
 
 </resources>
