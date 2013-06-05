@@ -269,7 +269,6 @@ public class EventDialog extends FragmentActivity implements OnClickListener {
 			setNameAndDetail(evtType, evtNum);
 			break;
 		case R.id.tvFurDetails:
-			// Hypothetical link
 			switch(evtType){
 			case 1:
 				startActivity(new Intent(Intent.ACTION_VIEW,

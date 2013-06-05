@@ -8,7 +8,6 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Typeface;
 import android.view.View;
-import android.widget.Button;
 
 public class HomeView extends View{
 

@@ -3,13 +3,13 @@ package com.IITI.fluxus13;
 import java.util.ArrayList;
 
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -106,7 +106,6 @@ public class Main extends SherlockFragmentActivity {
 		public void onPageScrollStateChanged(int state) {
 		}
 
-		@Override
 		public void onTabSelected(Tab tab, FragmentTransaction ft) {
 			Object tag = tab.getTag();
 			for (int i = 0; i < mTabs.size(); i++) {
@@ -115,13 +114,26 @@ public class Main extends SherlockFragmentActivity {
 				}
 			}
 		}
-
+		
 		@Override
-		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		public void onTabSelected(Tab tab,
+				android.support.v4.app.FragmentTransaction ft) {
+			// TODO Auto-generated method stub
+			
 		}
 
 		@Override
-		public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		public void onTabUnselected(Tab tab,
+				android.support.v4.app.FragmentTransaction ft) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onTabReselected(Tab tab,
+				android.support.v4.app.FragmentTransaction ft) {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 
